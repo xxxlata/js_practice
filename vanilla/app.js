@@ -1,73 +1,42 @@
-//const 업데이트 불가능한 변수 생성 , let 업데이트 가능 변수 생성
 /*
-const a = 5;
-const b = 2;
-let myName = "juha";
+//queryselector은 뭐든 불러올수있다.
 
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
-console.log("hello" + myName);
+const title = document.getElementById("title");
+const title = document.querySelector("#title");
+
+title.innerText ="Got you!";
 */
 
-//null 아무것도 없음 의미 false랑 다름 
-/*
-const amIFat = null;
-console.log(amIFat);
-*/
+//click event
+const title = document.querySelector("div.hello:first-child h1");
 
-function sayhello(nameOfPerson,age){
-    console.log("Hello my name is"+nameOfPerson + "and i am" + age);
+function handleTitleClick(){
+    title.style.color = "blue";
 }
-
-sayhello('nico',10);
-sayhello('dal',23);
-sayhello('juha',25);
-
-function plus(a,b){
-    console.log(a+b);
+function handleMouseEnter(){
+    title.innerText = "Mouse is here!";
 }
-function divide(a,b){
-    console.log(a / b);
+function handleMouseLeave(){
+    title.style.color = "Mouse is gone!";
 }
-plus(8,60);
-divide(34,54);
-
-const player = {
-    name: "juha",
-    sayhello: function(otherPersonsName){
-        console.log("helo!" + otherPersonsName);
-    },
-};
-
-player.sayhello("lynn");
-player.sayhello("juha");
-
-const age = parseInt(prompt("How old are you?"));
-
-if(isNaN(age)) {
-    console.log("please write a number");
-    
-}else if (age < 18) {
-    console.log("you are too young.");
-}else {
-    console.log("you can drink");
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
 }
-
-const age = parseInt(prompt("How old are you?"));
-
-if(isNaN(age) || age < 0) {
-    console.log("please write a number");
-    
-}else if (age < 18) {
-    console.log("you are too young.");
-}else if (age >= 18 && age <= 50){
-    console.log("you can drink");
-}else if(age > 50 && age <=80){
-    console.log("you should exercise");
-    
-}else if (age >80){
-    console.log("you can do whatever you want.");
-
+function handleWindowCopy(){
+    alert("copier!");
 }
+function handleWindowOffline(){
+    alert("Sos no Wifi");
+}
+function handleWindowOnline(){
+    alert("all good");
+}
+//두가지 방법으로 event 할 수있다.
+title.onclick ("click",handleTitleClick);
+title.addEventListener("Mouseenter",handleMouseEnter);
+title.addEventListener("Mouseleave",handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline",handleWindowOffline);
+window.addEventListener("online",handleWindowOnline);
