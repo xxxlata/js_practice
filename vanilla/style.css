@@ -1,0 +1,12 @@
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+    color: coral;
+    transition: color 0.5s ease-in-out;
+}
+
+.clicked {
+    color:lemonchiffon;
+}
