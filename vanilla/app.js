@@ -58,7 +58,7 @@ function handleTitleClick() {
 
 h1.addEventListener("click", handleTitleClick);
 
-//easy way use toggle with css
+//easy way use toggle
 */
 const h1 = document.querySelector("div.hello:first-child h1");
 
